@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!-- Include meta tag set language -->
+        <meta charset='utf-8'>
+        <!-- Include meta tag to ensure proper rendering and touch zooming -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Include jQuery Mobile stylesheets -->
+        <link rel="stylesheet" href="css/mobileProject.min.css">
+        <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css">
+
+        <!-- To page transition incompatibilities in some devices  -->
+        <style>
+            .ui-page {-webkit-backface-visibility: hidden; }
+        </style>
+
+        <!-- Include the phonegap library -->
+        <script src="js/phonegap-1.4.1.js"></script>
+        <!-- Include the jQuery library -->
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <!-- Include the jQuery Mobile library -->
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <!-- Include the offlineDB library -->
+        <script src="js/offlinedatabaseJS.js"></script>
+        <!-- Include the personal scripts of the aplication -->
+        <script src="js/scripts.js"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            //*********************************************************
+            // waiting cordova loading
+            //*********************************************************
+            document.addEventListener("deviceready", onDeviceReady, false);
+            function onDeviceReady() {
+                onInit(); //start loading db aplication
+            }
+        </script>
+    </head>
+    <body onload='onInit();'> <!-- pra rodar no browser -->
+
+        <!-- ################### SIGN IN #########################-->
+        <div data-role="page" id="pgSignIn" data-theme='a' class="pageTheme">
+            <!--<div data-role="header">
+                <h1>Controle Financeiro</h1>
+            </div>-->
+
+            <section data-role='content' align='center'>
+               <div class="ui-grid-b ui-responsive">
+                    <b>
+                        <h1>Controle Financeiro</h1>
+                    </b>
+
+                    <img src="img/iconeFinanceiro.png" width="50%" alt="">
+
+                    <form method="post" action="">
+                        <input type="email" name="email" id="txtEmailSnIn" placeholder="E-mail">
+                        <input type="password" name="passw" id="txtPasswdSnIn" placeholder='Senha'>
+
+                        <input type="button" class="ui-btn" value="Entrar" id="btnSignInSnIn">
+                        <input type="button" class="ui-btn" value="Sair" id="btnExitSnIn">
+                        <input type="button" class="ui-btn"  value="Cadastre-se" id="btnSignUpSnIn">
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- ################### SIGN UP #########################-->
+        <div data-role="page" id="pgSignUp" data-theme='a' class="pageTheme">
+            <!--<div data-role="header">
+                <h1>Controle Financeiro</h1>
+            </div>-->
+
+            <section data-role='content'>
+                                    <b>
+                        <h1>Cadastre-se</h1>
+                    </b>
+
+                    <!--<img src="img/iconeFinanceiro.png" width="50%" alt="">-->
+
+                    <form method="post" action="">
+                        <input type="number" name="id" id="txtIdSnUp">
+                        <input type="email" name="email" id="txtEmailSnUp" placeholder="E-mail">
+                        <input type="password" name="passw" id="txtPasswddSnUp" placeholder='Senha'>
+                        <input type="text" name="name" id="txtNameSnUp" placeholder="Nome">
+                        <input type="text" name="Cel" id="txtCelSnUp" placeholder="Celular">
+
+                        <input type="button" class="ui-btn" value="Cadastrar" id="btnRegister">
+                        <input type="button" class="ui-btn" value="Sair" id="btnExit">
+                    </form>
+            </section>
+        </div>
+
+        <!-- ################### HOME #########################-->
+        <div data-role="page" id="pgHome" data-theme='a' class="pageTheme">
+            <div data-role="header">
+                <h1>Controle Financeiro</h1>
+                <a href="#sideMenu" data-role='button' class='iu-btn-icon-notext' data-icon='bars'>Menu</a>
+            </div>
+
+            <section data-role='content'>
+                <h1>HOME</h1>
+            </section>
+
+            <!-- SIDE MENU -->
+            <div data-role='panel' class='ui-btn ui-corner-all' data-display='overlay' id='sideMenu'>
+                <!--<img src="img/iconeFinanceiro.png" width="30%" alt="">
+                <h3>[nomeuser]</h3><br>
+    			<ul data-role="listview">
+					<a href="#pgHome" data-role='button' class='iu-btn-icon-notext' data-icon='home'>Home</a>
+					<a href="#pgConta" data-role='button' class='iu-btn-icon-notext' data-icon='user'>Minha Conta</a>
+					<a href="#pgLancamento" data-role='button' class='iu-btn-icon-notext' data-icon='action'>Lançamentos</a>
+					<a href="#pgCategoria" data-role='button' class='iu-btn-icon-notext' data-icon='tag'>Categorias</a>
+					<a href="#pgConsulta" data-role='button' class='iu-btn-icon-notext' data-icon='eye'>Consultas</a>
+					<a href="#pgSobre" data-role='button' class='iu-btn-icon-notext' data-icon='info'>Sobre</a>
+					<a href="#" data-role='button' class='iu-btn-icon-notext' data-icon='back'>Sair</a>
+				</ul>-->
+
+				<script>
+                	$('#sideMen').load('sideMenu.html');
+                </script>
+
+<!--				<script>
+                	$.mobile.loadPage('sideMenu.html');
+                </script>-->
+            </div>
+        </div>
+
+        <!-- ################### SIDE MENU #########################-->
+        <div data-role="page" id="pgSideMenu" data-theme='a' class="pageTheme">
+
+            <section data-role='content'>
+                <img src="img/iconeFinanceiro.png" width="30%" alt="">
+                <h3>[nomeuser]</h3>
+            </section>
+        </div>
+    </body>
+</html>
